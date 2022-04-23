@@ -1,0 +1,42 @@
+server:
+  port: 8080
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: f104cc41ab8669df7d56
+            clientSecret: b072034a4aa747116d5e1dce081096535acb3de6
+  #  hibernate:
+  #    enable_lazy_load_no_traPns: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/productaplication
+    password: root
+    username: postgres
+  #    xayr h2
+  #    driver-class-name: org.h2.Driver
+  #    url: jdbc:h2:mem:restdb
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+  main:
+    lazy-initialization: true
+  mvc:
+    servlet:
+      path: /api
+  jackson:
+    date-format: yyyy-MM-dd
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+jwt:
+  secretKey: SupperKey
+  expireTime: 864000000
